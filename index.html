@@ -101,11 +101,10 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
-        .logo-text-gradient {
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            background-image: linear-gradient(to right, #fbd38d, #f6ad55); /* Gradiente amarelo */
+        .logo-img {
+            max-width: 250px;
+            height: auto;
+            margin: auto;
         }
     </style>
 </head>
@@ -114,17 +113,8 @@
     <div class="container mx-auto px-4 py-12">
 
         <header class="text-center mb-16">
-            <h1 class="text-4xl sm:text-6xl font-extrabold text-white leading-tight mb-4">
-                <span class="logo-text-gradient">
-                    The Brothers
-                </span>
-            </h1>
-            <h2 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight mb-4">
-                <span class="logo-text-gradient">
-                    Jardim São Paulo
-                </span>
-            </h2>
-            <p class="text-lg sm:text-xl text-gray-400 font-medium">Onde campeões são forjados.</p>
+            <img src="image (55).png" alt="The Brothers Jiu Jitsu Para Todos" class="logo-img">
+            <p class="text-lg sm:text-xl text-gray-400 font-medium mt-4">Onde campeões são forjados.</p>
         </header>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -252,7 +242,6 @@
         const chatContainer = document.getElementById('chat-container');
         const closeChatBtn = document.getElementById('close-chat-btn');
         const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=';
-        // A chave de API deve ser inserida aqui
         const apiKey = 'SUA_CHAVE_DE_API_GEMINI';
         
         let chatHistory = [{
