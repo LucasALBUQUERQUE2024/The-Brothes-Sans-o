@@ -9,7 +9,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #1a202c;
+            background-color: #000000; /* Fundo Preto */
             color: #e2e8f0;
         }
         .container {
@@ -18,32 +18,33 @@
             padding: 2rem 1rem;
         }
         .card {
-            background-color: #2d3748;
+            background-color: #1a202c; /* Cards em um tom de preto mais claro */
             border-radius: 1.5rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 4px 6px -2px rgba(255, 255, 255, 0.05);
             padding: 2rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 2px solid transparent;
         }
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
-            border-color: #4a5568;
+            box-shadow: 0 20px 25px -5px rgba(255, 255, 255, 0.15), 0 10px 10px -5px rgba(255, 255, 255, 0.08);
+            border-color: #fbd38d; /* Borda amarela no hover */
         }
         .cta-button {
-            background-color: #48bb78;
-            color: #1a202c;
+            background-color: #fbd38d; /* Botão amarelo */
+            color: #000000;
             padding: 0.75rem 1.5rem;
             border-radius: 0.75rem;
             font-weight: 700;
             transition: background-color 0.3s ease;
         }
         .cta-button:hover {
-            background-color: #68d391;
+            background-color: #f6ad55; /* Amarelo mais escuro no hover */
         }
         .kit-icon {
             font-size: 2.5rem;
             line-height: 1;
+            color: #fbd38d; /* Ícones amarelos */
         }
         .kit-title {
             font-size: 1.5rem;
@@ -53,17 +54,17 @@
         .kit-price {
             font-size: 2.25rem;
             font-weight: 700;
-            color: #48bb78;
+            color: #fbd38d; /* Preços em amarelo */
         }
         .kit-list li {
             position: relative;
             padding-left: 2rem;
         }
         .kit-list li::before {
-            content: '✔';
+            content: '🥋'; /* Ícone de kimono */
             position: absolute;
             left: 0;
-            color: #48bb78;
+            color: #fbd38d;
             font-weight: bold;
         }
 
@@ -84,7 +85,7 @@
             align-items: center;
         }
         .modal-content {
-            background-color: #2d3748;
+            background-color: #1a202c;
             padding: 2.5rem;
             border-radius: 1.5rem;
             text-align: center;
@@ -100,6 +101,12 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
+        .logo-text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(to right, #fbd38d, #f6ad55); /* Gradiente amarelo */
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-200">
@@ -108,12 +115,12 @@
 
         <header class="text-center mb-16">
             <h1 class="text-4xl sm:text-6xl font-extrabold text-white leading-tight mb-4">
-                <span class="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-green-600">
+                <span class="logo-text-gradient">
                     The Brothers
                 </span>
             </h1>
             <h2 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight mb-4">
-                <span class="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-green-600">
+                <span class="logo-text-gradient">
                     Jardim São Paulo
                 </span>
             </h2>
@@ -201,20 +208,20 @@
     </div>
     
     <div id="chat-container" class="fixed right-4 bottom-4 w-11/12 max-w-sm md:max-w-md bg-gray-800 rounded-2xl shadow-xl flex flex-col overflow-hidden transform scale-95 md:scale-100">
-        <div class="bg-emerald-600 text-white p-4 rounded-t-2xl flex justify-between items-center">
+        <div class="bg-yellow-500 text-black p-4 rounded-t-2xl flex justify-between items-center">
             <h3 class="text-lg font-bold">Assistente da The Brothers ✨</h3>
-            <button id="close-chat-btn" class="text-xl font-bold">&times;</button>
+            <button id="close-chat-btn" class="text-xl font-bold text-black">&times;</button>
         </div>
-        <div id="chat-box" class="flex-1 p-4 overflow-y-auto space-y-4 text-sm max-h-80 md:max-h-96">
+        <div id="chat-box" class="flex-1 p-4 overflow-y-auto space-y-4 text-sm max-h-80 md:max-h-96 bg-gray-900">
             <div class="flex justify-start">
                 <div class="bg-gray-700 text-white p-3 rounded-tr-xl rounded-bl-xl rounded-br-xl shadow-lg max-w-[80%]">
-                    E aí! Sou o Lucas, seu assistente virtual. Em que posso te ajudar hoje?
+                    E aí! Sou o Lucas, seu assistente virtual da The Brothers. Em que posso te ajudar hoje?
                 </div>
             </div>
         </div>
-        <div class="p-4 border-t border-gray-700 flex items-center gap-2">
-            <input type="text" id="user-input" placeholder="Digite sua pergunta..." class="flex-1 p-3 rounded-xl bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500">
-            <button id="send-btn" class="bg-emerald-600 text-white p-3 rounded-full hover:bg-emerald-700 transition-colors">
+        <div class="p-4 border-t border-gray-700 flex items-center gap-2 bg-gray-900">
+            <input type="text" id="user-input" placeholder="Digite sua pergunta..." class="flex-1 p-3 rounded-xl bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+            <button id="send-btn" class="bg-yellow-500 text-black p-3 rounded-full hover:bg-yellow-600 transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
                 </svg>
@@ -246,7 +253,7 @@
         const closeChatBtn = document.getElementById('close-chat-btn');
         const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=';
         // A chave de API deve ser inserida aqui
-        const apiKey = 'AIzaSyA6CM6ALaNB9yktKRP3qt_f6wOkoHxlszU';
+        const apiKey = 'SUA_CHAVE_DE_API_GEMINI';
         
         let chatHistory = [{
             role: 'user',
@@ -256,7 +263,7 @@
         function showMessage(text, sender) {
             const messageDiv = document.createElement('div');
             messageDiv.className = `flex ${sender === 'user' ? 'justify-end' : 'justify-start'}`;
-            messageDiv.innerHTML = `<div class="p-3 rounded-xl shadow-lg max-w-[80%] ${sender === 'user' ? 'bg-emerald-600 text-white rounded-tr-xl rounded-bl-xl rounded-tl-xl' : 'bg-gray-700 text-white rounded-tr-xl rounded-bl-xl rounded-br-xl'}">${text}</div>`;
+            messageDiv.innerHTML = `<div class="p-3 rounded-xl shadow-lg max-w-[80%] ${sender === 'user' ? 'bg-yellow-500 text-black rounded-tr-xl rounded-bl-xl rounded-tl-xl' : 'bg-gray-700 text-white rounded-tr-xl rounded-bl-xl rounded-br-xl'}">${text}</div>`;
             chatBox.appendChild(messageDiv);
             chatBox.scrollTop = chatBox.scrollHeight;
         }
